@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida per i tuoi ospiti - Cologno Monzese</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: linear-gradient(to bottom, #f0f8ff, #e6f3ff); color: #333; }
+        h1 { text-align: center; color: #007bff; }
+        .container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        button { padding: 15px 25px; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; transition: all 0.3s; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        button:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+        button:focus { outline: none; box-shadow: 0 0 0 4px #007bff; }
+        button:active { transform: translateY(0); }
+        #benvenuto { background: #28a745; color: white; }
+        #casa { background: #ffc107; color: #333; }
+        #zona { background: #17a2b8; color: white; }
+        #istruzioni { background: #dc3545; color: white; }
+        .content { display: none; margin-top: 20px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .content.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @media (max-width: 600px) { .container { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <h1>🌟 Benvenuti nella mia casa a Cologno Monzese! 🌟</h1>
+    <p style="text-align: center;">Clicca sui pulsanti per esplorare le info utili.</p>
+    
+    <div class="container">
+        <button onclick="showContent('benvenuto')">Benvenuto & Regole</button>
+        <button onclick="showContent('casa')">Casa & Comfort</button>
+        <button onclick="showContent('zona')">Zona & Trasporti</button>
+        <button onclick="showContent('istruzioni')">Check-in/out & Contatti</button>
+    </div>
+    
+    <div id="benvenuto" class="content">
+        <h2>Benvenuto!</h2>
+        <p>Siete arrivati! Rilassatevi e godetevi il soggiorno. Regola base: rispetto per la casa e i vicini. No feste rumorose dopo le 23:00.</p>
+    </div>
+    
+    <div id="casa" class="content">
+        <h2>Casa & Comfort</h2>
+        <p>WiFi: "MiaRete" password: Ospiti2026. Lavatrice in bagno, usa detersivo nel mobile. Cucina attrezzata per ricette lombarde.</p>
+    </div>
+    
+    <div id="zona" class="content">
+        <h2>Zona & Trasporti</h2>
+        <p>Vicino Milano (metro M2 Cologno Nord, 10 min). Parcheggio gratuito sotto casa. Ristoranti locali: prova risotto alla milanese a 500m.</p>
+    </div>
+    
+    <div id="istruzioni" class="content">
+        <h2>Check-in/out & Contatti</h2>
+        <p>Check-in: dalle 15:00, codice serratura: 1234. Check-out: entro 11:00, lascia chiavi dentro. Emergenze: chiamami al +39 XXX XXX XXXX.</p>
+    </div>
+
+    <script>
+        function showContent(id) {
+            // Nascondi tutti
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            // Mostra selezionato
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
